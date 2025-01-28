@@ -1,6 +1,6 @@
 // Binary Trees
 
-// Searching for a node in a BST
+// Searching for a node in a Binary Search Tree (BST)
 
 int find (struct tree_node * current_ptr, int val){
     // Check if there are nodes in the tree.
@@ -22,7 +22,7 @@ int find (struct tree_node * current_ptr, int val){
     }
 }
 
-// Searching for a node in an arbitrary tree
+// Searching for a node in an arbitrary tree.
 
 int Find(struct tree_node *current_ptr, int val){
     if(current_ptr != NULL){
@@ -36,10 +36,11 @@ int Find(struct tree_node *current_ptr, int val){
     }
 }
 
-// Summing the values of nodes in a tree
+// Summing the values of nodes in a tree.
 
 int add(struct tree_node *current_ptr){
     if(current_ptr != NULL){
+        // Recursively add all the nodes in a tree.
         return current_ptr->data + add(current_ptr->left) + add(current_ptr->right);
     }
     else{
@@ -54,6 +55,7 @@ int printEven(struct tree_node *current_ptr){
         if(current_ptr->data % 2 == 0){
             printf("%d ", current_ptr->data);
         }
+        // Recursively check left and right sides of the tree.
         printEven(current_ptr->left);
         printEven(current_ptr->right);
     }
